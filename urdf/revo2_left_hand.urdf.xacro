@@ -94,7 +94,8 @@
     </collision>
   </link>
   <joint name="left_thumb_proximal_joint" type="revolute">
-    <origin xyz="0 -0.014227 0" rpy="-0.17488 0.23736 -0.16787" />
+  <!-- 这个关节有调整，原点需要绕旋转轴多旋转9度作为原点，换算到对应的rpy弧度。 -->
+    <origin xyz="0 -0.014227 0" rpy="-0.33153 0.23736 -0.16787" />
     <parent link="left_thumb_metacarpal_link" />
     <child link="left_thumb_proximal_link" />
     <axis xyz="-1 0 0" />
@@ -123,12 +124,13 @@
     </collision>
   </link>
   <joint name="left_thumb_distal_joint" type="revolute">
-    <origin xyz="0 -0.052 0" rpy="0 0 0" />
+  <!-- 这个关节有调整，原点需要绕旋转轴多旋转6度作为原点，换算到对应的rpy弧度是 rpy="0.10472 0 0" -->
+    <origin xyz="0 -0.052 0" rpy="0.10472 0 0" />
     <parent link="left_thumb_proximal_link" />
     <child link="left_thumb_distal_link" />
     <axis xyz="-1 0 0" />
     <limit lower="0" upper="1.03" effort="1.1" velocity="2.5303" />
-    <mimic joint="left_thumb_proximal_joint" multiplier="1" offset="0" />
+    <mimic joint="left_thumb_proximal_joint" multiplier="0.691851" offset="0.0395854" />
   </joint>
   <link name="left_thumb_tip_link">
     </link>
