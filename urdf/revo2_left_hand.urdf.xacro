@@ -56,11 +56,12 @@
     </collision>
   </link>
   <joint name="left_thumb_metacarpal_joint" type="revolute">
-    <origin xyz="0.0045 -0.019 0.027825" rpy="0 0 0.16787" />
+    <!-- 零位重定义：新 q=0 对应旧坐标 +3deg（Stark2.0 URDF 2026-08-14） -->
+    <origin xyz="0.0045 -0.019 0.027825" rpy="0 0 0.22023" />
     <parent link="left_base_link" />
     <child link="left_thumb_metacarpal_link" />
     <axis xyz="0 0 1" />
-    <limit lower="0" upper="1.57" effort="0.5" velocity="2.6175" />
+    <limit lower="0" upper="1.55334" effort="0.5" velocity="2.6175" />
   </joint>
   <link name="left_thumb_proximal_link">
     <inertial>
@@ -99,7 +100,7 @@
     <parent link="left_thumb_metacarpal_link" />
     <child link="left_thumb_proximal_link" />
     <axis xyz="-1 0 0" />
-    <limit lower="0" upper="1.03" effort="1.1" velocity="2.5303" />
+    <limit lower="0" upper="1.04720" effort="1.1" velocity="2.5303" />
   </joint>
   <link name="left_thumb_distal_link">
     <inertial>
@@ -129,8 +130,8 @@
     <parent link="left_thumb_proximal_link" />
     <child link="left_thumb_distal_link" />
     <axis xyz="-1 0 0" />
-    <limit lower="0" upper="1.03" effort="1.1" velocity="2.5303" />
-    <mimic joint="left_thumb_proximal_joint" multiplier="0.691851" offset="0.0395854" />
+    <limit lower="0" upper="1.15192" effort="1.1" velocity="2.5303" />
+    <mimic joint="left_thumb_proximal_joint" multiplier="1.0945" offset="0" />
   </joint>
   <link name="left_thumb_tip_link">
     </link>
@@ -224,8 +225,8 @@
     <parent link="left_index_proximal_link" />
     <child link="left_index_distal_link" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.63" effort="2" velocity="2.2685" />
-    <mimic joint="left_index_proximal_joint" multiplier="1.155" offset="0" />
+    <limit lower="0" upper="1.69297" effort="2" velocity="2.2685" />
+    <mimic joint="left_index_proximal_joint" multiplier="1.131" offset="0" />
   </joint>
   <link name="left_index_tip_link">
     </link>
@@ -319,8 +320,8 @@
     <parent link="left_middle_proximal_link" />
     <child link="left_middle_distal_link" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.63" effort="2" velocity="2.2685" />
-    <mimic joint="left_middle_proximal_joint" multiplier="1.155" offset="0" />
+    <limit lower="0" upper="1.69297" effort="2" velocity="2.2685" />
+    <mimic joint="left_middle_proximal_joint" multiplier="1.267" offset="0" />
   </joint>
   <link name="left_middle_tip_link">
     </link>
@@ -414,8 +415,8 @@
     <parent link="left_ring_proximal_link" />
     <child link="left_ring_distal_link" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.63" effort="2" velocity="2.2685" />
-    <mimic joint="left_ring_proximal_joint" multiplier="1.155" offset="0" />
+    <limit lower="0" upper="1.69297" effort="2" velocity="2.2685" />
+    <mimic joint="left_ring_proximal_joint" multiplier="1.252" offset="0" />
   </joint>
   <link name="left_ring_tip_link">
     </link>
@@ -509,8 +510,8 @@
     <parent link="left_pinky_proximal_link" />
     <child link="left_pinky_distal_link" />
     <axis xyz="0 1 0" />
-    <limit lower="0" upper="1.63" effort="2" velocity="2.2685" />
-    <mimic joint="left_pinky_proximal_joint" multiplier="1.155" offset="0" />
+    <limit lower="0" upper="1.69297" effort="2" velocity="2.2685" />
+    <mimic joint="left_pinky_proximal_joint" multiplier="1.271" offset="0" />
   </joint>
   <link name="left_pinky_tip_link">
     </link>
