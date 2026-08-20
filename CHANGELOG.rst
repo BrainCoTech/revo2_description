@@ -2,6 +2,11 @@
 Changelog for package revo2_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.1 (2026-08-20)
+------------------
+* Align thumb abduction limit to 0~89 deg and MCP limit to 0~60 deg with current mass-production version (20260818)
+* Sync ``.urdf`` and ``.urdf.xacro``
+
 1.1.0 (2026-08-16)
 ------------------
 * Thumb abduction: redefine zero by +3 deg metacarpal joint origin offset; limits 0~90 deg
